@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container-fluid apod-show">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-11 py-5">
+      <div class="card p-5" style="border: none; box-shadow: none;">
+        <div class="card-body text-center">
+          <h1 class="display-4 fw-bold apod-header mb-4">Exoplanet Archive</h1>
+          <p class="lead fw-bold">Discover new worlds beyond our solar system using NASA's Exoplanet Archive.</p>
+          <p>Explore planets discovered since 2015, with data on their orbits, radii, and host stars. These insights help scientists understand planetary formation and the potential for life beyond Earth.</p>
+
+          <!-- Table Section -->
+          <div class="table-responsive mt-5">
+            <table class="table table-bordered">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Planet Name</th>
+                  <th scope="col">Host Star</th>
+                  <th scope="col">Discovery Year</th>
+                  <th scope="col">Orbital Period (days)</th>
+                  <th scope="col">Radius (Earth units)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% data.forEach(planet => { %>
+                  <tr>
+                    <td><%= planet.pl_name %></td>
+                    <td><%= planet.hostname %></td>
+                    <td><%= planet.disc_year %></td>
+                    <td><%= planet.pl_orbper || "N/A" %></td>
+                    <td><%= planet.pl_rade || "N/A" %></td>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

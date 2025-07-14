@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+log/
+debug.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Optional IDE configs
+.vscode/
+.idea/
+
+# Compiled or build outputs (if any in future)
+dist/
+build/
+
+# Public uploads (if any future user uploads)
+public/uploads/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Mac system file
+.DS_Store

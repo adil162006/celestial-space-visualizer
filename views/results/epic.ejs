@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <div class="container mt-4">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <% if (datas.length === 0) { %>
+        <div class="col-12">
+          <div class="alert alert-warning text-center" role="alert">
+            No EPIC images found for the selected date.
+          </div>
+        </div>
+      <% } else { %>
+
+        <% for (let data of datas) { %>
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="<%= data.url %>" class="card-img-top" alt="EPIC Earth Image" style="height: 18rem; object-fit: cover;">
+
+              <div class="card-body">
+                <p class="card-text">
+                  <strong>Date:</strong> <%= data.date %><br>
+                  <strong>Caption:</strong> <%= data.caption %>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+
+      <% } %>
+
+    </div>
+    <div class="mt-4">
+  <a href="/epic" class="btn btn-outline-primary">
+    &larr; Go Back
+  </a>
+</div>
+  </div>
+</body>

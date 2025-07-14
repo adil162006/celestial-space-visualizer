@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<div class="row apod-result">
+  <div class="col-8 offset-2 mt-4 text-center">
+    <h3><b><%= data.title %></b></h3>
+  </div>
+
+  <div class="card col-11 offset-1 mt-3 shadow-sm p-0">
+    <% if (data.media_type === "image") { %>
+      <img src="<%= data.url %>" class="apod-img card-img-top img-fluid  mx-auto d-block" style="max-width: 100%; height: auto; max-height: 650px; padding: 4rem;" alt="NASA APOD Image">
+    <% } else if (data.media_type === "video") { %>
+      <div class="ratio ratio-16x9">
+        <iframe src="<%= data.url %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+    <% } else { %>
+      <p class="text-center">Media not available.</p>
+    <% } %>
+
+    <div class="card-body text-start">
+      <p class="card-text"><%= data.explanation %></p>
+      <p class="text-muted">Date: <%= data.date %></p>
+    </div>
+  </div>
+
+  <div class="text-center mt-4 mb-4">
+    <a href="/apod" class="btn btn-primary">← Back</a>
+  </div>
+</div>

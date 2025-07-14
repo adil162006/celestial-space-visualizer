@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container-fluid apod-show">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-11 py-5">
+      <div class="card p-5" style="border: none; box-shadow: none;">
+        <div class="card-body text-center">
+          <h1 class="display-4 fw-bold epic-header mb-4">Earth Polychromatic Imaging Camera</h1>
+          <p class="lead fw-bold">
+              Witness Earth like never before with <strong>EPIC </strong> — your daily window into stunning real-time images of our home planet, captured by NASA's EPIC camera.
+          </p>
+            <p>
+                Each day, we bring you breathtaking views of Earth from space, taken by the Earth Polychromatic Imaging Camera (EPIC) aboard NOAA’s DSCOVR satellite.
+            </p>
+            <p>
+                From swirling cloud formations to the deep blues of oceans and greens of continents — Cosmos Daily helps you appreciate the dynamic beauty of Earth, one image at a time.
+            </p>
+
+          <form action="/epic/info" method="post" class="mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <label for="date" class="form-label fs-5">Select a Date</label>
+                <input type="date" id="date" name="date" class="form-control form-control-lg mb-3" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg px-4">Go</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

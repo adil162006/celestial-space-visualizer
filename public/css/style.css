@@ -1,0 +1,36 @@
+/* APOD */
+.apod-result{
+  font-size: 1.5rem;
+}
+.apod-header{
+    color: #00C3FF;
+      font-weight: 700;
+
+}
+.apod-show{
+  font-size: 1.5rem !important;
+}
+p{
+  font-size: 1.5rem !important;
+}
+.btn{
+    background-color: #00C3FF !important;
+    color: white !important;
+    border: none !important;
+}
+.btn-apod:hover {
+  background-color: #009edb !important;
+  color: #fff !important;
+}
+.apod-img img{
+  max-width: 100%; 
+  height: auto;
+   max-height: 650px;
+   padding: 4rem;
+}
+/* EPIC */
+.epic-header{
+    color: #00C3FF;
+      font-weight: 700;
+
+}
