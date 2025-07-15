@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container-fluid apod-show">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-11 py-5">
+      <div class="card p-5" style="border: none; box-shadow: none;">
+        <div class="card-body text-center">
+          <h1 class="display-4 fw-bold epic-header mb-4">Mars Rover Photo Explorer</h1>
+          <p class="lead fw-bold">
+              Discover Mars through the eyes of NASA's <strong>Curiosity</strong>, <strong>Opportunity</strong>, and <strong>Perseverance</strong> rovers.
+          </p>
+          <p>
+              Every day, NASA's Mars rovers capture stunning high-resolution photos of the Martian landscape — from dusty dunes and rocky plains to ancient riverbeds and alien horizons.
+          </p>
+          <p>
+              Select a date to view raw images taken by the rovers on that sol (Martian day), and experience what it's like to explore the Red Planet.
+          </p>
+          <div class="alert alert-info mt-4" role="alert">
+            <strong>Note:</strong><br>
+            <ul>
+              <li><strong>Spirit</strong> rover stopped communicating on <strong>March 22, 2010</strong>, and its mission officially ended in <strong>May 2011</strong>.</li>
+              <li><strong>Opportunity</strong> rover's final contact was on <strong>June 10, 2018</strong>, and it was declared inactive on <strong>February 13, 2019</strong>.</li>
+            </ul>
+            You may still explore archived images from their missions by selecting earlier dates.
+          </div>
+
+
+          <form action="/rover/info" method="post" class="mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <label for="date" class="form-label fs-5">Select a Date</label>
+                <input type="date" id="date" name="date" class="form-control form-control-lg mb-3" required>
+              </div>
+              <div class="col-md-6">
+                <label for="rover" class="form-label fs-5">Choose Rover</label>
+                <select id="rover" name="rover" class="form-select form-select-lg mb-3" required>
+                  <option value="curiosity" selected>Curiosity</option>
+                  <option value="opportunity">Opportunity</option>
+                  <option value="spirit">Spirit</option>
+                  <option value="perseverance">Perseverance</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger btn-lg px-4">Explore</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
