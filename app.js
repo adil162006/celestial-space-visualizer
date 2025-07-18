@@ -1,9 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
-require('dotenv').config();
+const ExpressError = require('./utils/ExpressError');
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
 
 // Middleware
 app.use(express.json());
@@ -19,6 +23,15 @@ app.set('views', path.join(__dirname, 'views'));
 //API Key and URL for NASA's Astronomy Picture of the Day (APOD)
 const api = process.env.NASA_API_KEY
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie:{
+    httpOnly: true,               // Prevents client-side JS from accessing the cookie
+    maxAge: 1000 * 60 * 60 * 24
+  }
+}));
 
 
 
@@ -128,6 +141,17 @@ app.get("/iss",async(req,res)=>{
     }
 
 })
+
+
+// app.all(/.*/,(req,res,next)=>{
+//     next(new ExpressError(404,"page not found"))
+// })
+
+// app.use((err,req,res,next)=>{
+//     let { status=500,message="some error occured"}=err
+//     res.status(status).render("error.ejs",{message})
+//     // res.send("Something went wrong");
+// })
 
 // Server
 app.listen(3000, () => {

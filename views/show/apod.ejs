@@ -10,11 +10,14 @@
           <p>Each day, we feature a different photograph of our universe, accompanied by a detailed explanation of its significance and context.</p>
           <p>From distant galaxies and nebulae to planets, moons, and space missions — Cosmos Daily helps you explore the cosmos one day at a time.</p>
 
-          <form action="/apod/info" method="post" class="mt-5">
+          <form action="/apod/info" method="post" class="mt-5 needs-validation" novalidate>
             <div class="row justify-content-center">
               <div class="col-md-6">
                 <label for="date" class="form-label fs-5">Select a Date</label>
                 <input type="date" id="date" name="date" class="form-control form-control-lg mb-3" required>
+                <div class="invalid-feedback">
+                  Please select a date.
+                </div>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn-lg px-4">Go</button>

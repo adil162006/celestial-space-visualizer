@@ -30,15 +30,21 @@
               <div class="col-md-6">
                 <label for="date" class="form-label fs-5">Select a Date</label>
                 <input type="date" id="date" name="date" class="form-control form-control-lg mb-3" required>
+                <div class="invalid-feedback">
+                  Please select a valid date.
+                </div>
               </div>
               <div class="col-md-6">
-                <label for="rover" class="form-label fs-5">Choose Rover</label>
+                <label for="rover" class="form-label fs-5 needs-validation" novalidate>Choose Rover</label>
                 <select id="rover" name="rover" class="form-select form-select-lg mb-3" required>
                   <option value="curiosity" selected>Curiosity</option>
                   <option value="opportunity">Opportunity</option>
                   <option value="spirit">Spirit</option>
                   <option value="perseverance">Perseverance</option>
                 </select>
+                <div class="invalid-feedback">
+                  Please choose a rover.
+                </div>
               </div>
             </div>
             <button type="submit" class="btn btn-danger btn-lg px-4">Explore</button>
