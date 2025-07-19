@@ -5,6 +5,20 @@
     <div class="col-12 col-md-10 col-lg-11 py-5">
       <div class="card p-5" style="border: none; box-shadow: none;">
         <div class="card-body text-center">
+          
+          <% if (error && error.length > 0) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= error %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% } %>
+
+          <% if (success && success.length > 0) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= success %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% } %>
           <h1 class="display-4 fw-bold epic-header mb-4">Earth Polychromatic Imaging Camera</h1>
           <p class="lead fw-bold">
               Witness Earth like never before with <strong>EPIC </strong> — your daily window into stunning real-time images of our home planet, captured by NASA's EPIC camera.
