@@ -1,3 +1,6 @@
+const rateLimit = require("express-rate-limit");
+const { ipKeyGenerator } = require("express-rate-limit");
+
 module.exports.isLoggedIn = (req, res, next) => {
     if (!req.isAuthenticated()) {
         req.session.redirectUrl = req.originalUrl;
@@ -31,3 +34,16 @@ module.exports.validateDateNotInFuture = (req, res, next) => {
 
     next();
 };
+
+
+module.exports.userRateLimiter =  rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 10, // max 10 requests per window
+    message: "You have exceeded the 10 requests per hour limit!",
+    standardHeaders: true,
+    legacyHeaders: false,
+    keyGenerator: (req) => {
+        // ✅ Use helper for IP-safe handling (prevents IPv6 bypass)
+        return ipKeyGenerator(req);
+    }
+});
