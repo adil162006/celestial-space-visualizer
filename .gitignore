@@ -34,4 +34,10 @@ coverage/
 
 # Mac system file
 .DS_Store
-server.js
+# 
+#   NOTE: This file was used initially for setting up all Express routes.
+#   It is no longer necessary as route handling has been fully integrated into `app.js`.
+#   
+#   This file is kept for reference during development but excluded from Git tracking (.gitignore).
+#  
+server.js 
