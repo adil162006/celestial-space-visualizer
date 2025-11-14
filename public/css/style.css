@@ -1,18 +1,4 @@
-/* APOD */
-.apod-result{
-  font-size: 1.5rem;
-}
-.apod-header{
-    color: #00C3FF;
-      font-weight: 700;
-
-}
-.apod-show{
-  font-size: 1.5rem !important;
-}
-p{
-  font-size: 1.5rem !important;
-}
+/* Global Styles */
 .btn{
     background-color: #00C3FF !important;
     color: white !important;
@@ -22,15 +8,160 @@ p{
   background-color: #009edb !important;
   color: #fff !important;
 }
+
+/* APOD Styles */
+.apod-header{
+    color: #00C3FF;
+    font-weight: 700;
+}
+.apod-show{
+  font-size: 1.1rem !important;
+}
+.apod-result{
+  font-size: 1.1rem;
+}
 .apod-img img{
   max-width: 100%; 
   height: auto;
-   max-height: 650px;
-   padding: 4rem;
+  max-height: 650px;
+  padding: 2rem;
 }
-/* EPIC */
+
+/* EPIC Styles */
 .epic-header{
     color: #00C3FF;
-      font-weight: 700;
+    font-weight: 700;
+}
 
+/* Responsive Typography */
+p{
+  font-size: 1rem !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Typography adjustments for mobile */
+  .apod-show {
+    font-size: 1rem !important;
+  }
+  
+  .apod-result {
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 0.95rem !important;
+  }
+  
+  /* Reduce image padding on mobile */
+  .apod-img img {
+    padding: 1rem !important;
+    max-height: 400px;
+  }
+  
+  /* Navbar adjustments */
+  .navbar {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  /* Container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Card padding adjustments */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem !important;
+  }
+  
+  /* Form adjustments */
+  .form-control-lg {
+    font-size: 1rem;
+  }
+  
+  /* Display adjustments */
+  .display-4,
+  .display-5 {
+    font-size: 1.75rem !important;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  /* ISS Map height on mobile */
+  #map {
+    height: 400px !important;
+  }
+  
+  /* Hero section adjustments */
+  section.container {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Medium screens and up - restore larger map */
+@media (min-width: 768px) {
+  #map {
+    height: 500px !important;
+  }
+}
+
+/* Large screens - full map height */
+@media (min-width: 992px) {
+  #map {
+    height: 600px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small devices */
+  .apod-show {
+    font-size: 0.95rem !important;
+  }
+  
+  .apod-result {
+    font-size: 0.95rem;
+  }
+  
+  p {
+    font-size: 0.9rem !important;
+  }
+  
+  .apod-img img {
+    padding: 0.5rem !important;
+    max-height: 300px;
+  }
+  
+  .display-4,
+  .display-5 {
+    font-size: 1.5rem !important;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  #map {
+    height: 350px !important;
+  }
+  
+  .card-body {
+    padding: 0.75rem !important;
+  }
+  
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 }

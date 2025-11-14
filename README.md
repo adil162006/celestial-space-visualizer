@@ -51,8 +51,14 @@ This project was built to explore public space data and showcase real-time space
 
 ## 🔒 Environment Variables
 
-To run this app, create a `.env` file in the root and add your NASA API key:
-NASA_API_KEY=your_nasa_api_key
-MAP_TOKEN=your_mapbox_token
-SESSION_SECRET=your_session_secret
+To run this app, create a `.env` file in the root and add:
+
+**Required:**
+- `NASA_API_KEY` - Your NASA API key (get one at https://api.nasa.gov/)
+- `MAP_TOKEN` - Your Mapbox token (for ISS tracker)
+
+**Optional:**
+- `PORT` - Server port (defaults to 3000)
+- `PUBLIC_URL` - Public URL for cron job keep-alive (required in production)
+- `NODE_ENV` - Set to "production" for production deployment
 

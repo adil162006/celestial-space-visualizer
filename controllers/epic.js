@@ -5,7 +5,7 @@ module.exports.showEPIC = (req,res)=>{
 
 }
 
-module.exports.resultEPIC =  async (req, res) => {
+module.exports.resultEPIC = async (req, res) => {
     const date = req.body.date;
     const url = `https://api.nasa.gov/EPIC/api/natural/date/${date}?api_key=${api}`;
 
@@ -13,10 +13,11 @@ module.exports.resultEPIC =  async (req, res) => {
         const response = await fetch(url);
         const data = await response.json();
 
-        // ✅ Check if the response is an array
-        if (!Array.isArray(data)) {
-            req.flash("error", "No EPIC data available for the selected date.");
-            return res.redirect("/epic");
+        // Check if the response is an array
+        if (!Array.isArray(data) || data.length === 0) {
+            return res.status(404).render("error.ejs", {
+                err: { status: 404, message: "No EPIC data available for the selected date." }
+            });
         }
 
         const datas = data.map(item => {
@@ -32,7 +33,8 @@ module.exports.resultEPIC =  async (req, res) => {
 
     } catch (err) {
         console.error("Error fetching data from NASA EPIC API:", err);
-        req.flash("error", "An error occurred while fetching EPIC data.");
-        res.redirect("/epic");
+        res.status(500).render("error.ejs", {
+            err: { status: 500, message: "An error occurred while fetching EPIC data." }
+        });
     }
 }

@@ -17,7 +17,9 @@ module.exports.resultAPOD =  async(req,res)=>{
     }
     catch(err){
         console.error("Error fetching data from NASA API:", err);
-        res.status(500).send("Internal Server Error");
+        res.status(500).render("error.ejs", {
+            err: { status: 500, message: "Error fetching data from NASA API. Please try again later." }
+        });
     }
 
 }

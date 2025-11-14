@@ -10,9 +10,10 @@ module.exports.showISS = async(req,res)=>{
         res.render("show/iss",{data,MAP_TOKEN: process.env.MAP_TOKEN})
 
     }catch(err){
-        console.error("Error fetching data from NASA  Archive:", err);
-        res.status(500).send("Internal Server Error");
-
+        console.error("Error fetching data from ISS API:", err);
+        res.status(500).render("error.ejs", {
+            err: { status: 500, message: "Error fetching ISS location data. Please try again later." }
+        });
     }
 
 }

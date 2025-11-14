@@ -9,7 +9,9 @@ module.exports.showEXO = async(req,res)=>{
         res.render("show/exoplanet",{data})
     }catch(err){
         console.error("Error fetching data from NASA Exoplanet Archive:", err);
-        res.status(500).send("Internal Server Error");
+        res.status(500).render("error.ejs", {
+            err: { status: 500, message: "Error fetching data from Exoplanet Archive. Please try again later." }
+        });
     }
 
 
