@@ -1,6 +1,10 @@
 # 🌌 Celestial — NASA Space Exploration Dashboard
 
-**Celestial** is an educational and interactive space-themed web application that brings NASA’s open data to your fingertips. Explore high-resolution space imagery, discover new planets, and track the International Space Station — all in one immersive dashboard.
+**Celestial** is an educational and interactive space-themed web application that brings NASA's open data to your fingertips. Explore high-resolution space imagery, discover new planets, and track the International Space Station — all in one immersive dashboard.
+
+## 🚀 Live Demo
+
+[https://celestial-space-visualizer.onrender.com/](https://celestial-space-visualizer.onrender.com/)
 
 
 
